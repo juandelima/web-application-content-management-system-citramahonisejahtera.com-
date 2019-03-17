@@ -1,0 +1,135 @@
+
+/* structure
+----------------------------------------------------------------------------------------------*/
+
+/* header
+----------------------------------------------------------------------------------------------*/
+header .logo {width: 120px;}
+header nav a {font-size: 14px;margin: 0 0 0 20px}
+/* middle
+----------------------------------------------------------------------------------------------*/
+.home_bottom .box h4, 
+.solution_home .box h4 {height: 40px;font-size: 14px;line-height: 40px;padding: 0 0 0 15px;}
+.home_bottom .box span,
+.solution_home .box span {height: 40px;}
+.home_bottom .box {width: 50%;}
+.home_bottom .box img{min-width: 100%;}
+
+.std_content .list_image img {max-width: 220px;margin: 0 13px 0 0;}
+.std_content .link_about .box {width: 48%;margin: 0 4% 35px 0;}
+.std_content .link_about .box img{min-width: 100%;}
+.std_content .link_about .box:nth-child(2n+0){margin-right: 0;}
+
+.std_content .inner_content {width: 67%;padding: 50px 0px 115px 30px;min-width: 0;}
+.std_content .side_nav {max-width: 25%;}
+.std_content .side_nav h2 { font-size: 20px;line-height: 25px;}
+
+.std_content h1.main-title {font-size: 34px;}
+.std_content h2 {font-size: 34px;}
+.std_content .inner_content h5 {font-size: 23px;margin: 0 0 20px;}
+.std_content .inner_content h3 {font-size: 20px;margin: 0 0 5px;}
+.std_content ul li,
+.std_content p {font-size: 13px;line-height: 19px;}
+
+.std_content .inner_content .list_image img {margin-right: 10px;width: 146px;}
+.std_content .inner_content h6 {font-size: 15px;margin: 0px 0 10px;}
+.std_content ul li {margin: 0 0 5px;}
+
+.operational_net .filter {margin: 0 0 0 35px;}
+.operational_net .filter select {width: 220px;}
+.std_content h4 {font-size: 20px;line-height: 26px;margin: 0 0 30px 0;}
+.about .list_news .box h4 {font-size: 20px;line-height: 26px;margin-bottom: 15px;}
+.about_detail .inner_content h2 {font-size: 20px;line-height: 26px;}
+.about_detail .inner_content h6 {font-size: 12px;text-transform: capitalize;}
+.poultry.product_detail .product_desc .desc .price .left {font-size: 18px;}
+.poultry.product_detail .product_desc .desc .price .right a{font-size: 12px;line-height: 21px;}
+.poultry.product_detail .thumb_slide{max-width: 265px; margin: auto;}
+.poultry.product_detail .product_desc .bx-wrapper .bx-controls-direction a.bx-prev{left: -25px;}
+.poultry.product_detail .product_desc .bx-wrapper .bx-controls-direction a.bx-next{right: -25px;}
+
+.std_content.inquiry .wrapper .inquiry_cart table {margin: 0px auto 0;}
+.std_content.inquiry .wrapper .inquiry_cart table thead{display:none; }
+.std_content.inquiry .wrapper .inquiry_cart table tbody tr{display: block;margin:0 30px 0 ;padding: 0 0 30px 0;border-bottom:1px solid #eaeaea;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody tr:after{display: block;clear: both;content:" ";}
+.std_content.inquiry .wrapper .inquiry_cart table tbody tr:last-child{border-bottom: none;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td{display: block;float: left;padding: 0;border:none;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(1){width: 100%;padding: 30px 0 20px 0;border:none;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .img_product {max-width: 100px;width: 100px;padding: 0 30px 0 0; }
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .dec_product {width: 485px;}
+
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(2){margin: 0 0 0 130px;text-align: left;width: 210px;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(3){text-align: center;width: 85px;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(4){text-align: right;width: 199px;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(2):before,
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(3):before,
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(4):before{
+    content:"";
+    display: block;
+    border-bottom:1px solid #eaeaea;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    color:#666666;
+    padding: 0 0 12px;
+}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(2):before{content:"Estimated Price (IDR)";margin: 0 0 14px 0;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(3):before{content:"Qty";margin: 0 0 8px 0;}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td:nth-child(4):before{content:"Estimated Sub Total (IDR)";margin: 0 0 14px 0;}
+
+.std_content.check_confirm .side_nav {max-width: 31%;}
+.std_content.check_confirm .inner_content {padding: 50px 20px 115px 0px;}
+.std_content.check_confirm .inner_content form.check_form .row textarea {width: 348px;}
+
+.std_content.career .inner_content .right.top_nav .row{width: 50%; margin: 0 0 20px;}
+.std_content.career .inner_content .right.top_nav .row:last-child{margin-bottom: 0}
+
+.poultry.product_view .list_product .box {width: 210px;height: 445px;margin: 0 28px 65px 0;}
+.poultry.product_view .list_product .box .image{width: 210px;height:160px;}
+.poultry.product_view .list_product .box h4{font-size: 20px}
+
+.poultry.product_view .list_product.list .box {height: 245px;}
+.poultry.product_view .list_product.list .box .image{width: 240px;height: 190px;}
+.poultry.product_view .list_product.list .box a{top:auto;bottom: 35px;width: 170px;right: 0;}
+
+.poultry.product_view .list_product.list .box h4{margin-top: -15px;position: relative;}
+.poultry.product_view .list_product.list .box i,
+.poultry.product_view .list_product.list .box h4,
+.poultry.product_view .list_product.list .box h5,
+.poultry.product_view .list_product.list .box p,
+.poultry.product_view .list_product.list .box ul{width:170px;margin-left:  280px;}
+
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .dec_product textarea {
+    width: 480px;
+    height: 35px;
+    max-width: 480px;
+    max-height: 35px;
+    min-width: 480px;
+    min-height: 35px;
+}
+.poultry.product_view .related_product .list_product .box {width: 314px;}
+table .cart-update-btn{margin: 5px 0px 0px 3px !important;}
+.sitemap nav .left .box a {font-size: 14px}
+.poultry.product_view .list_product .box:nth-child(3n+0) {margin-right: 28px;}
+.form-content form.check_form .row textarea {max-width: 88%;}
+.std_content.career .inner_content form.apply .row .column select { width: 218px;}
+.investors .spar_content {margin: 65px 0 0 0;overflow: auto;}
+.std_content.general-corporate-information .inner_content .left{margin-top: 27px !important;}
+.std_content .inner_content .list_certificate .head h5 {font-size: 14px}
+.std_content.career .inner_content .blokPotrait .dec_potrait { width: 100%;}
+/* footer
+----------------------------------------------------------------------------------------------*/
+footer .wrapper {width: 630px;}
+footer nav{max-width: 100%;}
+footer nav a.head {margin-bottom: 0;}
+footer nav .left {width: 50%;margin: 0 0 0;}
+footer nav .left .box{width: auto;padding: 0 0 0 30px;}
+footer nav .left .box:last-child{margin-bottom: 0;}
+footer h5{padding: 0;}
+footer .address {
+    width: 50%;
+    margin: -140px 0 75px 0;
+}
+footer .address *{margin-left: 30px;}
+footer .foot_bottom .right,
+footer .foot_bottom .left{margin:0;text-align: center;float:none;display: block;}
+footer .foot_bottom .right{margin:3px 0 5px}

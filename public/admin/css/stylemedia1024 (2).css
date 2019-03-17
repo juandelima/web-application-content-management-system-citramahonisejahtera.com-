@@ -1,0 +1,624 @@
+
+/* structure
+----------------------------------------------------------------------------------------------*/
+body{
+    border-bottom: 2px solid #ff9f68;
+}
+/* header
+----------------------------------------------------------------------------------------------*/
+header{
+    height: 110px;
+}
+header .wrapper{
+    padding:0 20px;
+}
+header .logo {
+    width: 128px;padding: 0;
+    margin-top: -10px;
+}
+header nav{
+    margin:30px 0 0;
+}
+header nav a {
+    font-size: 15px;
+}
+header nav a:last-child{
+    padding-right: 45px;
+}
+header nav a:last-child:after{
+    width: 30px;
+    height: 30px;
+    background-size: 100% auto;
+    top: -8px;
+}
+
+/* middle
+----------------------------------------------------------------------------------------------*/
+.wrapper._home {
+    margin: 0 20px;
+}
+.banner_home{
+    height: 600px;
+    width: 100%;
+}
+.banner_home .bg_2,
+.banner_home .large_circle{
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+
+}
+.banner_home .large_circle{
+    margin: 100px auto 0 auto;
+}
+.banner_home .bg_2{
+    top: -275px;
+}
+
+.solution_home h2 {
+    font-size: 23px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.home_bottom .box h4, 
+.solution_home .box h4 {
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+    padding: 0 0 0 15px;
+}
+
+.home_bottom .box span, 
+.solution_home .box span {
+    height: 45px;
+}
+
+.home_bottom .box h4{
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    width: 96%;
+}
+
+.home_bottom .box span{
+    height: 40px;
+}
+
+.std_content{
+    margin: 0 20px;
+    padding: 50px 20px 70px;
+}
+.std_content h1.main-title {
+    color: #000;
+    margin: 0 0 20px;
+    font-size: 40px;
+}
+
+.std_content h2 {
+    color: #000;
+    margin: 0 0 20px;
+    font-size: 40px;
+}
+
+.std_content h4 {
+    font-size: 25px;
+    line-height: 32px;
+    margin: 0 0 20px 0;
+}
+
+.std_content .list_image {
+    margin: 0 0 30px;
+}
+
+.std_content .list_image img {
+    margin: 0 20px 0 0;
+    max-width: 290px;
+}
+
+.std_content .link_about {
+    margin: 40px 0 0 0;
+}
+
+.std_content .link_about .box {
+    width: 220px;
+    margin: 0 15px 20px 0;
+}
+
+.std_content .link_about .box h5{
+    padding-left: 13px;
+}
+
+.std_content .side_nav {
+    max-width: 22%;
+}
+.std_content .side_nav a{
+    font-size: 13px;
+}
+
+.std_content .inner_content{
+    width: 67%;
+    min-width: 635px;
+    padding: 50px 35px 115px 55px;
+}
+
+.std_content .inner_content .list_image img {
+    margin-right: 20px;
+    width: 198px;
+}
+
+.std_content .inner_content .list_image.type2 img{
+    margin-right: 0;
+    width: 25%;
+} 
+
+.operational_net .filter {
+    margin: 0 0 0 115px;
+}
+
+.about_detail .inner_content h2 {
+    font-size: 34px;
+    line-height: 36px;
+}
+
+.investors .annual_large .image {
+    width: 210px;
+}
+
+.investors .annual_large .desc {
+    width: 320px;
+}
+
+.investors .annual_large .desc h5{
+    margin: 60px 0 15px;
+}
+.investors .annual_large .desc h2{
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.investors .list_financial .box{
+    width: 220px;
+    background: url(../images/material/bg_box_large_1024.png) no-repeat; 
+}
+
+.investors .list_financial .box h5 {
+    font-size: 18px;
+}
+
+.investors .list_present .box {
+    background: url(../images/material/bg_box_little1024.png) no-repeat left center;
+    width: 150px;
+    height: 181px;
+    margin: 0px 17px 25px 0;
+}
+.investors .list_present .box a {
+    top: 165px;
+}
+
+.std_content.career .inner_content .blokPotrait .img_potrait {
+    width: 205px;
+    height: auto;
+}
+
+.std_content.career .inner_content .blokPotrait .dec_potrait{
+    width: 60%;
+}
+.std_content.career .inner_content form.apply .row .column {
+    width: 50%;
+}
+
+.std_content.career .inner_content form.apply .row .column input[type="text"] {
+    max-width: 85%;
+}
+
+.std_content.career .inner_content form.apply .row .column .input_file {
+    padding:10px;
+    width: 85%;
+}
+
+.std_content.career .inner_content .right.top_nav .row input[type="text"] {
+    width: 150px;
+}
+
+.std_content .link_about .box h5{
+    width: 87%;
+}
+
+.poultry.product_view .related_product .list_product .box {
+    width: 220px;
+    margin: 0 20px 35px 0;
+}
+
+.poultry.product_view .related_product .list_product .box a{
+    width: 180px;
+    margin: 20px auto 0 auto;
+}
+
+.poultry.product_view .related_product .list_product .box:nth-child(2n+0){
+    margin-right: 20px;
+}
+
+.poultry.product_view .related_product .list_product .box:nth-child(3n+0){
+    margin-right: 20px;
+}
+
+.poultry.product_view .related_product .list_product .box:nth-child(4n+0){
+    margin-right: 0;
+}
+
+.form-content form.check_form .row textarea {
+    width: 620px;
+}
+
+.list_certificate .content_desc {
+    padding: 25px 0 25px 30px;
+}
+
+a.downloads {
+    font-size: 14px;
+    padding-left: 20px;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.poultry.product_view .list_product .box {
+    width: 290px;
+    height: 440px;
+    margin: 0 55px 65px 0;
+}
+
+.poultry.product_view .list_product .box:nth-child(3n+0){
+    margin-right: 55px;
+}
+
+.poultry.product_view .list_product .box:nth-child(2n+0){
+    margin-right: 0px;
+}
+
+.poultry.product_view .list_product .box .image img{
+    min-width: 0;max-height: 100%;
+}
+
+.poultry.product_view .list_product .box a{
+    width: 100%;
+}
+
+.poultry.product_view .product_introduce .image {
+    width: 295px;
+}
+
+.poultry.product_view .product_introduce .desc {
+    width: 320px;
+}
+
+.poultry.product_detail .product_desc .right {
+    width: 50%;
+}
+
+.poultry.product_detail .product_desc .right {
+    width: 48%;
+}
+
+.poultry.product_detail .product_desc .desc textarea {
+    width: 93%;
+}
+
+.std_content.poultry h6 {
+    font-size: 18px;
+}
+
+.std_content.inquiry .wrapper .inquiry_cart table{
+    width: auto;margin: -33px auto 0;
+}
+
+.std_content.inquiry .wrapper .inquiry_cart table thead th{
+    width: auto !important;
+}
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .img_product {
+    width: 100px;
+    padding: 0 15px;
+}
+
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .dec_product {
+    width: 350px;
+}
+
+.std_content.check_confirm .inner_content {
+    width: 63%;min-width: 0;
+}
+
+.std_content.check_confirm .side_nav {
+    max-width: 27%;
+}
+
+.std_content.check_confirm .inner_content form.check_form .row textarea {
+    width: 620px;
+}
+
+.std_content.thanks .wrapper h1 {
+    font-size: 45px;
+}
+
+.std_content.thanks .wrapper h4 {
+    font-size: 16px;line-height: 22px;
+}
+
+.std_content.thanks .wrapper .kontak p {
+    font-size: 18px;
+    margin: 0 0 3px;
+}
+
+.std_content.career .inner_content .blokPotrait {
+    padding:290px 0 0 0;position: relative;
+}
+
+.std_content.career .inner_content .blokPotrait .img_potrait{
+    width: 230px;
+    height: 263px;
+    margin-bottom: -20px;
+    position: absolute;
+    left: 0;top: 0;
+}
+
+.std_content.career .inner_content .blokPotrait .img_potrait p{
+    position: absolute;
+    min-width: 88%;
+    bottom: 0;
+    top: auto;
+}
+.std_content.career .inner_content .blokPotrait .dec_potrait {
+    width: 100%;
+    padding: 0;
+}
+
+.std_content.career .inner_content .right.top_nav.right {
+    width: 100%;
+}
+
+.std_content.career .inner_content .right.top_nav .row {
+    width: 33%;
+}
+
+.std_content.career .inner_content .right.top_nav .row input[type="text"] {
+    width: 180px;
+}
+
+.std_content.career .inner_content .right.top_nav .row .cover_combo select {
+    width: 200px;
+}
+
+.std_content.career .inner_content .blockCareer a {
+    font-size: 21px;
+}
+
+.investors .annual_large .image {
+    width: 150px;
+    margin: 0 25px 0 0;
+}
+
+.investors .annual_large .desc {
+    width: 284px;
+}
+
+.investors .annual_large .desc h2 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.investors .annual_large .desc h5 {
+    margin: 45px 0 5px;
+}
+
+.investors .list_financial .box h5 {
+    font-size: 16px;
+}
+
+.investors .list_financial .box {
+    width: 370px;
+    height: 220px;
+    background: url(../images/material/bg_box_large_768.png) no-repeat;
+}
+
+.investors .list_financial .bottom {
+    top: 190px;
+}
+
+.investors .list_present .box,
+.investors .list_present .box:nth-child(3n+0){
+    margin:0 40px 30px 0;
+}
+
+.investors .list_present .box:nth-child(2n+0){
+    margin-right: 0;
+}
+
+.investors .list_financial .bottom {
+    top: 170px;
+}
+
+.investors .wrap_map,
+.investors .wrap_map .map{
+    height: 330px;
+    overflow: hidden;
+}
+
+.investors .wrap_map .caption {
+    width: 190px;padding: 0 20px;
+}
+
+.investors .wrap_map .caption p{
+    font-size: 12px
+}
+
+.std_content .list_bod .box .right {
+    max-width: 95%;
+}
+
+.std_content .inner_content .list_certificate .head h5{
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.investors table th {
+    padding: 0px 5px;
+}
+.investors table td {
+    padding:10px 5px;
+}
+
+.poultry.product_view .product_introduce .image,
+.poultry.product_view .product_introduce .desc{
+    width: 100%;
+}
+
+.poultry.product_view .product_introduce .image{
+    margin:20px 0 0 0;
+}
+.poultry.product_view .list_product .box {
+    width: 290px;
+}
+
+.poultry.product_view .list_product.list .box {
+    height: 200px;
+}
+
+.poultry.product_view .list_product.list .box a {
+    width: 200px;
+    top:0;
+    right: 0;
+    margin: auto;
+}
+
+.poultry.product_view .list_product.list .box i,
+.poultry.product_view .list_product.list .box h5,
+.poultry.product_view .list_product.list .box p,
+.poultry.product_view .list_product.list .box h
+.poultry.product_view .list_product.list .box ul{
+    width:180px;
+}
+
+.poultry.product_view .list_product.list .box h4 {
+    right: 0;
+    top: 10px;
+}
+
+
+.poultry.product_detail .product_desc .left {
+    width: 45%;
+}
+
+.poultry.product_view .related_product .list_product .box {
+    width: 215px;
+}
+
+/*.poultry.product_view .related_product .list_product .box:last-child{display: none}
+.poultry.product_view .related_product .list_product .box:nth-child(3n+0){margin-right: 0;}*/
+
+
+.poultry.product_view .list_product .box .image {
+    height: 155px;
+}
+
+.std_content.inquiry .wrapper .inquiry_cart table tbody td .product_item .dec_product textarea {
+    font-size: 12px;
+    padding: 8px;
+    width: 300px;
+    height: 60px;
+    max-width: 300px;
+    max-height: 60px;
+    min-width: 300px;
+    min-height: 60px;
+}
+
+table .cart-update-btn{
+    margin: 5px 0px 0px 0px !important;
+}
+
+.std_content.career .inner_content form.apply .row .column select {
+    width: 290px;
+}
+
+.investors .list_present .box h5 {
+    font-size: 18px;
+}
+
+.investors .list_present.type2 .box h5 {
+    color: #333;
+    font-size: 15px;
+}
+
+.investors .wrap_map .caption h3 {
+    margin: 40px 0 5px 0;
+}
+
+.investors .wrap_map .caption p{
+    line-height: 18px;
+}
+
+.std_content.career .inner_content .blokPotrait:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.std_content.career .inner_content .blokPotrait .img_potrait {
+    float: left;
+    width: 230px;
+    height: 263px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+.std_content.career .inner_content .blokPotrait .dec_potrait {
+    width: 100%;
+    padding: 0 0 0 0px !important;
+}
+/* footer
+----------------------------------------------------------------------------------------------*/
+footer {
+    margin: 0 20px;
+}
+
+footer h5{
+    margin-bottom: 8px;
+}
+
+footer .wrapper{
+    width:895px;
+}
+
+footer nav .box {
+    width: 292px;
+    margin: 0 0 35px;
+}
+
+footer nav a{
+    margin-bottom: 5px
+}
+
+footer nav a.head{
+    margin-bottom: 0
+}
+
+footer .address {
+    width: 300px;
+    margin: -60px 0 75px 0;
+}
+
+footer .foot_bottom {
+    padding: 10px 0 10px;
+    border:none;
+}
+
+footer .foot_bottom .right{
+    margin: 4px 0 0 0;
+}
+
+/* back to top
+----------------------------------------------------------------------------------------------*/
+
+/*.go_top {right: 12px; height: 40px;}
+.go_top i {display: none;}
+.go_top.absSroll {right: 12px; bottom: 640px;}
+.go_top .ico_top {width: 40px; height: 40px; background-size: 30px;}*/
