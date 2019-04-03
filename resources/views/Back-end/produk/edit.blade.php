@@ -92,6 +92,8 @@
 
 					<div id="tambah">
 						<?php $i = 0; ?>
+						<?php $z = 0; ?>
+						@if ($produk->gambar->count() > 0)
 						@foreach($produk->gambar as $row)
 						<?php $i++; ?>
 						<div id="foto_<?= $i; ?>" style="margin-top: 15px;">
@@ -126,13 +128,13 @@
 										</div>
 										<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
 										<div>
-
 											<span class="btn btn-white btn-file">
 												<span class="fileinput-new">Pilih Photo</span>
 												<span class="fileinput-exists">Ubah</span>
-												<input type="file" id="gambarup_{{$i}}" name="sub_img[]" accept="image/*">
+												<input type="file" id="gambarup_{{$i}}" name="sub_img[{{$z}}]" accept="image/*">
 											</span>
-											<input type="hidden" id="gambarup_{{$i}}" name="sub_img[]" value="{{$row->sub_img}}">
+											<input type="hidden" id="gambarup_{{$i}}" name="sub_img[{{$z}}]" value="{{$row->sub_img}}">
+											<input type="hidden" id="gambarup_{{$i}}" name="sub_img2[{{$z}}]" value="{{$row->id_sub_img}}">
 											<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Hapus</a>
 											@if($i >= 2)
 												<button type="button" class="btn btn-red btn-icon icon-left hapus" data-id="<?= $i; ?>"> Hapus
@@ -144,9 +146,42 @@
 								</div>
 							</div>
 						</div>
+						<?php $z += 1; ?>
 						@endforeach
+						@else
+							<?php $i++; ?>
+							<div id="foto_<?= $i; ?>" style="margin-top: 15px;">
+								<div class="form-group">
+									<label for="field-1" class="col-sm-2 control-label" style="text-align:left;">&emsp;Foto Produk:
+									@if (session('error_upload1'))
+									<br />
+									<p style="color:red;">
+										{{ session('error_upload1') }}
+									</p>
+									@endif
+									
+									</label>
+									<div class="col-sm-4">
+										<div class="fileinput fileinput-new" data-provides="fileinput">
+											<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;" data-trigger="fileinput">
+												<img src="http://placehold.it/200x150" alt="...">
+											</div>
+											<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
+											<div>
+												<span class="btn btn-white btn-file">
+													<span class="fileinput-new">Pilih Photo</span>
+													<span class="fileinput-exists">Ubah</span>
+													<input type="file" name="sub_img[]" accept="image/*">
+												</span>
+												<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Hapus</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						@endif
+						
 					</div>
-
 					<div class="form-group">
 						<label for="field-ta" class="col-sm-2 control-label"></label>
 						<div class="col-sm-2">
@@ -173,7 +208,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 <script src="{{asset('admin/js/fileinput.js')}}"></script>
 <script type="text/javascript">
-	var loop = 2;
+	var loop = <?= ++$i; ?>;
     $(document).ready(function() {
     	//initialize summernote
         $('.summernote').summernote({
@@ -232,7 +267,6 @@
 			e.preventDefault();
 			var id = $(this).data('id');
 			$("#foto_"+id).remove();
-			hitung_total();
 		});
    });
 </script>
