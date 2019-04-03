@@ -42,7 +42,7 @@ class PostController extends Controller
 			$path = public_path('/'. $image_name);
 			file_put_contents($path, $data);
 			$img->removeattribute('src');
-			$img->setattribute('src','http://citramahonisejahtera.com/'.$image_name);
+			$img->setattribute('src','/'.$image_name);
     	}
         
     	if($request->hasFile('img')) {
@@ -102,7 +102,7 @@ class PostController extends Controller
                 $path = public_path('/'. $image_name);
                 file_put_contents($path, $data);
                 $img->removeattribute('src');
-                $img->setattribute('src','http://citramahonisejahtera.com/'.$image_name);
+                $img->setattribute('src','/'.$image_name);
             }
         }
 

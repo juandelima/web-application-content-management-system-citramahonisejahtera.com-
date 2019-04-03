@@ -8,6 +8,7 @@ use App\Models\KategoriProduk;
 use App\Models\Produk;
 use App\Models\SubprodukImg;
 use File;
+use Input;
 
 class ProdukController extends Controller {
     
@@ -38,7 +39,7 @@ class ProdukController extends Controller {
 
 		$data = $request->all();
 		$produk = new Produk();
-		//dd(count($data['sub_img']), $data);
+		//dd(count($data['gambar_lama']));
 		if($request->hasFile('featured_image')) {
             $cek_ekstensi = $data['featured_image']->getClientMimeType();
             if (substr($cek_ekstensi, 0, 5) != "image") {
@@ -64,18 +65,20 @@ class ProdukController extends Controller {
 			}
 		}
 
+
 		return redirect()->route('index_produk')->with(['success' => 'Produk Berhasil di Buat']);
 	}
 
 	public function update(Request $request, $id) {
-		
 		$this->validate($request, array(
 			'kategori_id' => 'required',
 			'nama_produk' => 'required',
 			'deskripsi' => 'required',
 		));
+
 		$data = $request->all();
-		//dd($data['sub_img2']);
+		$id_sub_img = null;
+		
 		$produk = new Produk();
 		if($request->hasFile('featured_image')) {
             $cek_ekstensi = $data['featured_image']->getClientMimeType();
@@ -92,25 +95,75 @@ class ProdukController extends Controller {
         }
 
         $slug_produk = str_slug($data['nama_produk'], '-');
-        $produk->ubah_data($data['kategori_id'], $img, $data['nama_produk'], $data['deskripsi'], $slug_produk, $id);   
-        if ($data['sub_img'] != NULL) {
-        	if ($request->hasFile('sub_img')) {
-				foreach ($request->file('sub_img') as $img) {
-					$name = $img->getClientOriginalName();
-					$tujuan = public_path().'/produk';
-					$img->move($tujuan, $name);
-					$produk->update_gambar($name, $id);
+		$produk->ubah_data($data['kategori_id'], $img, $data['nama_produk'], $data['deskripsi'], $slug_produk, $id);
+
+		$temp = NULL;
+		$index = 0;
+
+		if (Produk::find($id)->gambar->count() > 0) {
+			$id_sub_img = $data['sub_img2'];
+			if ($data['sub_img'] != null) {
+				for ($i=0; $i < count($data['sub_img']); $i++) { 
+					$temp[] = $data['sub_img'][$i];
+				}
+			}
+
+			if ((count($temp) == Produk::find($id)->gambar->count()) or (count($temp) > Produk::find($id)->gambar->count())) {
+				for ($j = 0; $j < count($temp); $j++) {
+					if ($index < Produk::find($id)->gambar->count()) {
+						$get_id_subImg = SubprodukImg::find($id_sub_img[$j])->id_sub_img;
+						if ($id_sub_img[$j] == $get_id_subImg) {
+							if (is_file($temp[$j])) {
+								$name = $temp[$j]->getClientOriginalName();
+								$tujuan = public_path().'/produk';
+								$temp[$j]->move($tujuan, $name);
+								$produk->update_gambar($name, $get_id_subImg, $id);
+							} else {
+								$produk->update_gambar($temp[$j], $get_id_subImg, $id);
+							}
+						}
+					} else {
+						if (is_file($temp[$j])) {
+							$nama = $temp[$j]->getClientOriginalName();
+							$tujuan = public_path().'/produk';
+							$temp[$j]->move($tujuan, $nama);
+							$produk->create_gambar_baru($nama, $id);
+						}
+					}
+					$index += 1;
 				}
 			} else {
 				SubprodukImg::where('produk_id', $id)->delete();
-        		for ($i = 0; $i < count($data['sub_img']); $i++) {
-	       			SubprodukImg::create([
-	       				'sub_img' => $data['sub_img'][$i],
-	       				'produk_id' => $id
-	       			]);
-        		}
+				for ($j = 0; $j < count($temp); $j++) {
+					if (is_file($temp[$j])) {
+						$nama = $temp[$j]->getClientOriginalName();
+						$tujuan = public_path().'/produk';
+						$temp[$j]->move($tujuan, $nama);
+						$produk->create_gambar_baru($nama, $id);
+					} else {
+						$produk->create_gambar_baru($temp[$j], $id);
+					}
+				}
 			}
-        }  
+		} else {
+			if (!isset($data['sub_img'])) {
+				return redirect()->route('index_produk')->with(['success' => 'Produk Berhasil di Ubah']);
+			} else {
+				if ($data['sub_img'] != null) {
+					for ($i=0; $i < count($data['sub_img']); $i++) { 
+						$temp[] = $data['sub_img'][$i];
+					}
+				}
+				for ($j = 0; $j < count($temp); $j++) {
+					if (is_file($temp[$j])) {
+						$nama = $temp[$j]->getClientOriginalName();
+						$tujuan = public_path().'/produk';
+						$temp[$j]->move($tujuan, $nama);
+						$produk->create_gambar_baru($nama, $id);
+					}
+				}
+			}
+		}
 
         return redirect()->route('index_produk')->with(['success' => 'Produk Berhasil di Ubah']);
 	}
