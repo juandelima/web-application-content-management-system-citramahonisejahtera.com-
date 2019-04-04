@@ -16,11 +16,11 @@ class Proyek extends Model {
         'created_at','updated_at',
     ];
 
-    public function simpan($kategori_produk, $thumbnail_produk, $nama_produk, $deskripsi, $slug) {
+    public function simpan($kategori_proyek, $thumbnail_proyek, $nama_proyek, $deskripsi, $slug) {
     	DB::table($this->table)->insert([
-            'kategori_proyek_id' => $kategori_produk,
-            'nama_project' => $nama_produk,
-            'featured_image' => $thumbnail_produk,
+            'kategori_proyek_id' => $kategori_proyek,
+            'nama_project' => $nama_proyek,
+            'featured_image' => $thumbnail_proyek,
             'deskripsi' => $deskripsi,
             'slug' => $slug,
         ]);
@@ -34,20 +34,27 @@ class Proyek extends Model {
         ]);
     }
 
-    public function ubah_data($kategori_produk, $thumbnail_produk, $nama_produk, $deskripsi, $slug, $id) {
+    public function ubah_data($kategori_proyek, $thumbnail_proyek, $nama_proyek, $deskripsi, $slug, $id) {
         DB::table($this->table)->where($this->primaryKey, $id)->update([
-            'kategori_proyek_id' => $kategori_produk,
-            'nama_project' => $nama_produk,
-            'featured_image' => $thumbnail_produk,
+            'kategori_proyek_id' => $kategori_proyek,
+            'nama_project' => $nama_proyek,
+            'featured_image' => $thumbnail_proyek,
             'deskripsi' => $deskripsi,
             'slug' => $slug,
         ]);
     }
 
-    public function update_gambar($nama_gambar, $id) {
+    public function update_gambar($nama_gambar, $id, $proyek_id) {
+        SubImgProyek::where('id_sub_img', $id)->update([
+            'sub_img' => $nama_gambar,
+            'proyek_id' => $proyek_id
+        ]);
+    }
+
+    public function create_gambar_baru($nama_gambar, $id) {
         SubImgProyek::create([
             'sub_img' => $nama_gambar,
-            'proyek_id' => $id,
+            'proyek_id' => $id
         ]);
     }
 

@@ -45,10 +45,17 @@ class Produk extends Model
         ]);
     }
 
-    public function update_gambar($nama_gambar, $id) {
+    public function update_gambar($nama_gambar, $id, $produk_id) {
+        SubprodukImg::where('id_sub_img', $id)->update([
+            'sub_img' => $nama_gambar,
+            'produk_id' => $produk_id
+        ]);
+    }
+
+    public function create_gambar_baru($nama_gambar, $id) {
         SubprodukImg::create([
             'sub_img' => $nama_gambar,
-            'produk_id' => $id,
+            'produk_id' => $id
         ]);
     }
 
