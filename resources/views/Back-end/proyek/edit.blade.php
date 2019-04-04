@@ -95,6 +95,7 @@
 						<?php $z = 0; ?>
 						@if ($proyek->gambar->count() > 0)
 						@foreach($proyek->gambar as $row)
+						<input type="hidden" id="gambarup_{{$i}}" name="sub_img2[{{$z}}]" value="{{$row->id_sub_img}}">
 						<?php $i++; ?>
 						<div id="foto_<?= $i; ?>" style="margin-top: 15px;">
 							<div class="form-group">
@@ -133,7 +134,6 @@
 												<input type="file" id="gambarup_{{$i}}" name="sub_img[{{$z}}]" accept="image/*">
 											</span>
 											<input type="hidden" id="gambarup_{{$i}}" name="sub_img[{{$z}}]" value="{{$row->sub_img}}">
-											<input type="hidden" id="gambarup_{{$i}}" name="sub_img2[{{$z}}]" value="{{$row->id_sub_img}}">
 											<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Hapus</a>
 											@if($i >= 2)
 												<button type="button" class="btn btn-red btn-icon icon-left hapus" data-id="<?= $i; ?>"> Hapus

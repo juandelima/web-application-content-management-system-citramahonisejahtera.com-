@@ -161,20 +161,19 @@
       </video>
     </div>
   </div>
-</div>
-
-<div>
-	<h1 class="t_pro" style="margin-top: 125px;">OUR DONE PROJECTS</h1>
-	<div class="border"></div>
-	<div class="slide_our_done">
-	    @foreach($proyek as $row)
-		<div class="project_done" style="background-image: url({{asset('/proyek_img/'.$row->featured_image)}});">
-			<div class="text_">
-				<small>{{$row->kategori->nama_kategori}}</small><br/>
-				<h1><a href="{{route('projects.single', $row->slug)}}" target="__blank" style="color: #fff; font-size: 23px;">{{$row->nama_project}}</a></h1>
-			</div>
-		</div>
-		@endforeach
-	</div>
+  <div>
+    <h1 class="t_pro" style="margin-top: 125px;">OUR DONE PROJECTS</h1>
+    <div class="border"></div>
+    <div class="slide_our_done">
+        @foreach($proyek as $row)
+      <div class="project_done" style="background-image: url({{asset('/proyek_img/'.$row->featured_image)}});">
+        <div class="text_">
+          <small>{{$row->kategori->nama_kategori}}</small><br/>
+          <h1><a href="{{route('projects.single', $row->slug)}}" target="__blank" style="color: #fff; font-size: 23px;">{{$row->nama_project}}</a></h1>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </div>
 </div>
 @endsection
