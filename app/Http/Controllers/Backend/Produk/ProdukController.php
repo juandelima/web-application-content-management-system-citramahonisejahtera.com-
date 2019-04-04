@@ -36,7 +36,6 @@ class ProdukController extends Controller {
 			'deskripsi' => 'required',
 			'sub_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048' 
 		));
-
 		$data = $request->all();
 		$produk = new Produk();
 		//dd(count($data['gambar_lama']));
@@ -45,16 +44,17 @@ class ProdukController extends Controller {
             if (substr($cek_ekstensi, 0, 5) != "image") {
                 return redirect()->back()->withInput()->with("error_upload", "Format file harus gambar!");
             } else {
-                $img = random_int(0, 9999).'-'.$data['featured_image']->getClientOriginalName();
+				$img = random_int(0, 9999).'-'.$data['featured_image']->getClientOriginalName();
+				$getfilename =  str_replace(' ', '_', $img);
                 $destination = public_path().'/produk';
-                $request->file('featured_image')->move($destination, $img);
+                $request->file('featured_image')->move($destination, $getfilename);
             }
         } else {
             $img ='';
         }
         $slug_produk = str_slug($data['nama_produk'], '-');
 
-		$produk->simpan($data['kategori_id'], $img, $data['nama_produk'], $data['deskripsi'], $slug_produk);
+		$produk->simpan($data['kategori_id'], $getfilename, $data['nama_produk'], $data['deskripsi'], $slug_produk);
 
 		if ($request->hasFile('sub_img')) {
 			foreach ($request->file('sub_img') as $img) {
@@ -86,28 +86,56 @@ class ProdukController extends Controller {
                 return redirect()->back()->withInput()->with("error_upload", "Format file harus gambar!");
             } else {
             	File::delete('produk/'.$data['gambar_lama']);
-                $img = random_int(0, 9999).'-'.$data['featured_image']->getClientOriginalName();
+				$img = random_int(0, 9999).'-'.$data['featured_image']->getClientOriginalName();
+				$getfilename =  str_replace(' ', '_', $img);
                 $destination = public_path().'/produk';
-                $request->file('featured_image')->move($destination, $img);
+                $request->file('featured_image')->move($destination, $getfilename);
             }
         } else {
-            $img = Produk::find($id)->featured_image;
+            $getfilename = Produk::find($id)->featured_image;
         }
 
         $slug_produk = str_slug($data['nama_produk'], '-');
-		$produk->ubah_data($data['kategori_id'], $img, $data['nama_produk'], $data['deskripsi'], $slug_produk, $id);
+		$produk->ubah_data($data['kategori_id'], $getfilename, $data['nama_produk'], $data['deskripsi'], $slug_produk, $id);
 
 		$temp = NULL;
 		$index = 0;
-
 		if (Produk::find($id)->gambar->count() > 0) {
 			$id_sub_img = $data['sub_img2'];
 			if ($data['sub_img'] != null) {
-				for ($i=0; $i < count($data['sub_img']); $i++) { 
-					$temp[] = $data['sub_img'][$i];
+				if (Produk::find($id)->gambar->count() > count($data['sub_img'])) {
+					for ($i=0; $i < Produk::find($id)->gambar->count(); $i++) {
+						if (!empty($data['sub_img'][$i])) {
+							$temp[] = $data['sub_img'][$i];
+						} else {
+							if (empty($data['sub_img'][$i])) {
+								continue;
+							}
+						}
+					}
+				} else {
+					$temp2[] = $data['sub_img'];
+					$count_tmp = count($temp2[0]);
+					$null = 0;
+					$not_null = 0;
+					for ($j  = 0; $j < $count_tmp; $j++) { 
+						if (empty($temp2[0][$j])) {
+							$null += 1;
+						} else {
+							$not_null += 1;
+						}
+					}
+					for ($i = 0; $i < $null + $not_null; $i++) { 
+						if (!empty($temp2[0][$i])) {
+							$temp[] = $temp2[0][$i];
+						} else {
+							$not_null += 1;
+						}
+					}
+					// dd($not_null, $null,$temp,$count_tmp, $id_sub_img, count($data['sub_img']),$data['sub_img']);
 				}
 			}
-
+			
 			if ((count($temp) == Produk::find($id)->gambar->count()) or (count($temp) > Produk::find($id)->gambar->count())) {
 				for ($j = 0; $j < count($temp); $j++) {
 					if ($index < Produk::find($id)->gambar->count()) {
