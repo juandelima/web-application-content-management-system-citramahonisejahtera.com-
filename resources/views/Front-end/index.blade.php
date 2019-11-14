@@ -1,6 +1,7 @@
 @extends('Front-end/template')
 @section('title','Home')
 @section('main')
+
 <div class="control_carousel">
   <div class="carousel_1">
     <p class="carouse_capt">Selamat Datang di Citra Mahoni Sejahtera</p>
@@ -30,6 +31,7 @@
     </div>
   </div>
 
+
   <div class="row space">
     <h1 class="t_pro">Our Products</h1>
     <div class="border"></div>
@@ -37,7 +39,7 @@
       @foreach($product as $row)
       <a href="{{ route('products.single', $row->slug) }}" class="margin">
         <div class="slide_1" style="background-image: url({{asset("/produk/".$row->featured_image)}});"></div>
-        <span class="text">{{$row->nama_produk}}</span>
+        <span class="text ">{{$row->nama_produk}}</span>
       </a>
       @endforeach
     </div>
@@ -81,7 +83,7 @@
     <div class="border"></div>
     <div class="slider-clients">
       @foreach($klien as $row)
-      <div class="client margin" style="background-image: url({{asset("/img_client/".$row->client_img)}});"></div>
+      <div class="client margin2" style="background-image: url({{asset("/img_client/".$row->client_img)}});"></div>
       @endforeach
     </div>
   </div>

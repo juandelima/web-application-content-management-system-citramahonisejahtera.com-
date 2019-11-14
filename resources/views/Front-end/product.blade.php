@@ -3,7 +3,7 @@
 @section('main')
 
 <div class="container">
-    <div class="row" style="margin-top: 120px;">
+    <div class="row" style="margin-top: 100px;">
         <div class="col-md-3">
             <div class="box-month">
     			<h1>By Category</h1>
@@ -36,10 +36,10 @@
     				<li><a href="{{route('product.filter', $row->slug)}}">{{$row->nama_kategori}}</a></li>
     				@endforeach
     			</ul>
-	</div>
-</div>
-
-@foreach($product as $row)
+    </div>
+    
+    
+    @foreach($product as $row)
 <div class="modal fade quick-view-modal" id="quick-view-modal{{$row->id_produk}}" tabindex="-3" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-product">
         <div class="modal-content"> 
@@ -83,5 +83,8 @@
     </div>
 </div>
 @endforeach
+</div>
+
+
 
 @endsection

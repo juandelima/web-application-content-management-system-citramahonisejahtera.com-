@@ -1,5 +1,5 @@
 <header>
-    <nav class="navi">
+    <nav class="navi" id="nav">
       <input type="checkbox" id="nav" class="hidden">
       <label for="nav" class="nav-btn">
         <i></i>

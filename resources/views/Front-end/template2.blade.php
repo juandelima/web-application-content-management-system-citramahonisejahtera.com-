@@ -3,7 +3,7 @@
 <head>
     @include('Front-end/includes/head')
 </head>
-<body>
+<body class="class_body">
 {{-- Navigasi --}}
 @include('Front-end/includes/nav')
 

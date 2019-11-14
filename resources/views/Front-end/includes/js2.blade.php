@@ -30,6 +30,16 @@
   });
 
   $(document).ready(function(){
+    if (($(window).width() >= 240 ) && ($(window).width() <= 767 )){
+      $('.close').click(function(){
+        $('nav').css('display','block');
+      });
+    } else {
+      $('.close').click(function(){
+        $('nav').css('display','block');
+      });
+    }
+
     $('.nama_produk').click(function(){
       $('nav').css('display','none');
     });
@@ -41,8 +51,16 @@
         $('.nav-wrapper').css('display','block');
     });
 
-    $('.close').click(function(){
-      $('nav').css('display','block');
-    });
+    if ($(window).width() >= 768 ){
+      $('.close').click(function(){
+        $('nav').css('display','block');
+      });
+    
+      $('.modal').click(function(){
+        $('nav').css('display','block');
+      });
+    }
+    
   });
+  
 </script>
